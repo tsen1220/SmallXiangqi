@@ -49,7 +49,7 @@ function shuffle() {
   for (let i = 0; i < tenDigit; i++) {
     for (let j = 0; j < oneDigit; j++) {
       var gamecell = document.getElementById(`blank${i}${j}`);
-      gamecell.setAttribute("piece", piecelist[i * 4 + j]);
+      gamecell.setAttribute("piece", piecelist[i * 8 + j]);
     }
   }
 }
