@@ -1,0 +1,19 @@
+.gamecell {
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  display: inline-block;
+}
+
+.gamecell:hover {
+  background-color: cadetblue;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+
+.row {
+  position: relative;
+}
+/*# sourceMappingURL=style.css.map */

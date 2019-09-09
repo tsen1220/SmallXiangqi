@@ -1,0 +1,16 @@
+.gamecell {
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  display: inline-block;
+  &:hover {
+    background-color: cadetblue;
+    transition: 0.3s linear;
+  }
+}
+
+.row {
+  position: relative;
+}
