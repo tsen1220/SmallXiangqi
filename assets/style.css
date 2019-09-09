@@ -15,5 +15,13 @@
 
 .row {
   position: relative;
+  width: 900px;
+  height: 110px;
+}
+
+#board {
+  position: absolute;
+  left: 350px;
+  top: 100px;
 }
 /*# sourceMappingURL=style.css.map */

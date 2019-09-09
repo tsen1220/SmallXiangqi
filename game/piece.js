@@ -2,7 +2,7 @@ $(document).ready(function() {
   $(".gamecell").each(function() {
     if ($(this).attr("piece") == "blackking") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        .html(`<svg  width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <title>&#23559;</title>
       <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
       <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
