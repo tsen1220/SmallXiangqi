@@ -57,40 +57,66 @@ class playgame {
       });
     }
   }
+  //移除原位棋子
+  removepiece(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) {
+    var that = this;
+
+    $("[piece]").each(function() {
+      if (
+        $(this).attr("piece") == selpiece &&
+        $(this).attr("row") == selrow &&
+        $(this).attr("column") == selcolumn
+      ) {
+        $(this).attr("piece", "empty");
+        that.piecestyle("empty", this);
+      }
+    });
+  }
+
   // 選擇指定旗子
   Choosepiece() {
     var that = this;
 
     $("[piece]").each(function() {
       $(this).bind("click", function() {
-        if (hasSelection) {
-          if (
-            selection.row == $(this).attr("row") &&
-            selection.column == $(this).attr("column")
-          ) {
-            selection = { piece: "", row: "", column: "" };
-            hasSelection = false;
+        if ($(this).hasClass("animated")) {
+          if (hasSelection) {
+            if (
+              selection.row == $(this).attr("row") &&
+              selection.column == $(this).attr("column")
+            ) {
+              selection = { piece: "", row: "", column: "" };
+              hasSelection = false;
+            } else {
+              target.piece = $(this).attr("piece");
+              target.row = $(this).attr("row");
+              target.column = $(this).attr("column");
+              console.log(target);
+              hasSelection = false;
+              that.movepiece(
+                selection.piece,
+                target.piece,
+                selection.row,
+                selection.column,
+                target.row,
+                target.column
+              );
+              that.removepiece(
+                selection.piece,
+                target.piece,
+                selection.row,
+                selection.column,
+                target.row,
+                target.column
+              );
+            }
           } else {
-            target.piece = $(this).attr("piece");
-            target.row = $(this).attr("row");
-            target.column = $(this).attr("column");
-            console.log(target);
-            hasSelection = false;
-            that.movepiece(
-              selection.piece,
-              target.piece,
-              selection.row,
-              selection.column,
-              target.row,
-              target.column
-            );
+            selection.piece = $(this).attr("piece");
+            selection.row = $(this).attr("row");
+            selection.column = $(this).attr("column");
+            console.log(selection);
+            hasSelection = true;
           }
-        } else {
-          selection.piece = $(this).attr("piece");
-          selection.row = $(this).attr("row");
-          selection.column = $(this).attr("column");
-          console.log(selection);
-          hasSelection = true;
         }
       });
     });
@@ -126,7 +152,7 @@ class playgame {
     } else if (selpiece == "redrook") {
       $(these).html(piecestyle.redrook);
     } else if (selpiece == "empty") {
-      $(these).html("");
+      $(these).html(" ");
     }
   }
 }
