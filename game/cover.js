@@ -1,5 +1,10 @@
-$(".gamecell").addClass("cover");
-
-$(".cover").bind("click", function() {
-  $(".gamecell").removeClass("cover");
+$(".gamecell").each(function() {
+  $(this).bind("click", function() {
+    $(this).addClass("flipInX animated");
+    console.log(
+      $(this)
+        .children(".cover")
+        .css("opacity", "0")
+    );
+  });
 });

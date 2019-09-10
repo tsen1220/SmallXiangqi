@@ -2,8 +2,8 @@ $(document).ready(function() {
   $(".gamecell").each(function() {
     if ($(this).attr("piece") == "blackking") {
       $(this)
-        .html(`<svg  width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <title>&#23559;</title>
+        .html(`<div class='cover'></div><svg  width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      
       <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
       <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
       <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -42,11 +42,12 @@ $(document).ready(function() {
       </g>
       </svg>
       </svg>
+     
       `);
     } else if ($(this).attr("piece") == "redking") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <title>&#24101;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      
       <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
       <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
       <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -82,8 +83,8 @@ $(document).ready(function() {
       `);
     } else if ($(this).attr("piece") == "blackboom") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <title>&#30770;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      
       <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
       <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
       <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -124,8 +125,8 @@ $(document).ready(function() {
       `);
     } else if ($(this).attr("piece") == "blackelephant") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>&#35937;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          
           <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
           <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
           <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -164,8 +165,8 @@ $(document).ready(function() {
         `);
     } else if ($(this).attr("piece") == "blackhorse") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>&#39340;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        
         <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
         <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
         <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -205,8 +206,8 @@ $(document).ready(function() {
           `);
     } else if ($(this).attr("piece") == "blackpawn") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>&#21330;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          
           <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
           <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
           <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -241,8 +242,8 @@ $(document).ready(function() {
             `);
     } else if ($(this).attr("piece") == "blackrook") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>&#36554;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        
         <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
         <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
         <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -277,8 +278,8 @@ $(document).ready(function() {
               `);
     } else if ($(this).attr("piece") == "blacksu") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>&#22763;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          
           <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
           <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
           <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -300,8 +301,8 @@ $(document).ready(function() {
                 `);
     } else if ($(this).attr("piece") == "redboom") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>&#28846;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          
           <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
           <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
           <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -340,8 +341,8 @@ $(document).ready(function() {
                   `);
     } else if ($(this).attr("piece") == "redelephant") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>&#30456;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          
           <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
           <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
           <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -377,8 +378,8 @@ $(document).ready(function() {
                     `);
     } else if ($(this).attr("piece") == "redhorse") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>&#20620;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          
           <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
           <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
           <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -425,8 +426,8 @@ $(document).ready(function() {
                       `);
     } else if ($(this).attr("piece") == "redpawn") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>&#20853;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        
         <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
         <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
         <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -459,8 +460,8 @@ $(document).ready(function() {
                         `);
     } else if ($(this).attr("piece") == "redsu") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>&#20181;</title>
+        .html(`<div class='cover'></div><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        
         <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
         <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
         <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -490,8 +491,8 @@ $(document).ready(function() {
                           `);
     } else if ($(this).attr("piece") == "redrook") {
       $(this)
-        .html(`<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>&#20453;</title>
+        .html(`<div class='cover'></div><svg  width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        
         <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
         <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
         <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
