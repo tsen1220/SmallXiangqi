@@ -2,7 +2,7 @@ export default class piecesstyle {
   constructor() {}
 
   blackboom = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#30770;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -42,7 +42,7 @@ export default class piecesstyle {
   </svg>
   `;
   blackelephant = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#35937;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -79,7 +79,7 @@ export default class piecesstyle {
   </svg>
   `;
   blackhorse = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#39340;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -117,7 +117,7 @@ export default class piecesstyle {
   </svg>
   `;
   blackking = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#23559;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -158,7 +158,7 @@ export default class piecesstyle {
   </svg>
   `;
   blackpawn = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#21330;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -190,7 +190,7 @@ export default class piecesstyle {
   </svg>
   `;
   blackrook = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#36554;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -224,7 +224,7 @@ export default class piecesstyle {
   </svg>
   `;
   blacksu = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#22763;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -244,7 +244,7 @@ export default class piecesstyle {
   </svg>
   `;
   redboom = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#28846;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -282,7 +282,7 @@ export default class piecesstyle {
   </svg>
   `;
   redelephant = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#30456;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -316,7 +316,7 @@ export default class piecesstyle {
   </svg>
   `;
   redhorse = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#20620;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -360,7 +360,7 @@ export default class piecesstyle {
   </svg>
   `;
   redking = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#24101;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -395,7 +395,7 @@ export default class piecesstyle {
   </svg>
   `;
   redpawn = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#20853;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -424,7 +424,7 @@ export default class piecesstyle {
   </svg>
   `;
   redrook = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#20453;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -462,7 +462,7 @@ export default class piecesstyle {
   </svg>
   `;
   redsu = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>&#20181;</title>
+  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">

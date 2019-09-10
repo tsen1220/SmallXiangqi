@@ -39,23 +39,28 @@ var map = [
 ];
 
 class playgame {
+  //移動棋子
   movepiece(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) {
+    var that = this;
     if (map[table.get(selpiece)][table.get(tarpiece)] == 1) {
       $("[piece]").each(function() {
-        if (
-          $(this).attr("piece") == tarpiece &&
-          $(this).attr("row") == tarrow &&
-          $(this).attr("column") == tarcolumn
-        ) {
-          $(this).attr("piece", selpiece);
+        if ($(this).hasClass("animated")) {
+          if (
+            $(this).attr("piece") == tarpiece &&
+            $(this).attr("row") == tarrow &&
+            $(this).attr("column") == tarcolumn
+          ) {
+            $(this).attr("piece", selpiece);
+            that.piecestyle(selpiece, this);
+          }
         }
       });
     }
   }
-
+  // 選擇指定旗子
   Choosepiece() {
-    // 選擇指定旗子
     var that = this;
+
     $("[piece]").each(function() {
       $(this).bind("click", function() {
         if (hasSelection) {
@@ -69,7 +74,7 @@ class playgame {
             target.piece = $(this).attr("piece");
             target.row = $(this).attr("row");
             target.column = $(this).attr("column");
-
+            console.log(target);
             hasSelection = false;
             that.movepiece(
               selection.piece,
@@ -84,11 +89,45 @@ class playgame {
           selection.piece = $(this).attr("piece");
           selection.row = $(this).attr("row");
           selection.column = $(this).attr("column");
-
+          console.log(selection);
           hasSelection = true;
         }
       });
     });
+  }
+  //渲染attr
+  piecestyle(selpiece, these) {
+    if (selpiece == "blackking") {
+      $(these).html(piecestyle.blackking);
+    } else if (selpiece == "redking") {
+      $(these).html(piecestyle.redking);
+    } else if (selpiece == "blackboom") {
+      $(these).html(piecestyle.blackboom);
+    } else if (selpiece == "blackelephant") {
+      $(these).html(piecestyle.blackelephant);
+    } else if (selpiece == "blackhorse") {
+      $(these).html(piecestyle.blackhorse);
+    } else if (selpiece == "blackpawn") {
+      $(these).html(piecestyle.blackpawn);
+    } else if (selpiece == "blackrook") {
+      $(these).html(piecestyle.blackrook);
+    } else if (selpiece == "blacksu") {
+      $(these).html(piecestyle.blacksu);
+    } else if (selpiece == "redboom") {
+      $(these).html(piecestyle.redboom);
+    } else if (selpiece == "redelephant") {
+      $(these).html(piecestyle.redelephant);
+    } else if (selpiece == "redhorse") {
+      $(these).html(piecestyle.redhorse);
+    } else if (selpiece == "redpawn") {
+      $(these).html(piecestyle.redpawn);
+    } else if (selpiece == "redsu") {
+      $(these).html(piecestyle.redsu);
+    } else if (selpiece == "redrook") {
+      $(these).html(piecestyle.redrook);
+    } else if (selpiece == "empty") {
+      $(these).html("");
+    }
   }
 }
 var game = new playgame();
