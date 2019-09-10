@@ -35,11 +35,12 @@ var piecelist = [
 
 const tenDigit = 4;
 const oneDigit = 8;
+var temp = [];
 
 function shuffle() {
   for (let k = 0; k < 100; k++) {
-    for (let i = 0; i < this.piecelist.length; i++) {
-      var j = Math.floor(Math.random() * this.piecelist.length);
+    for (let i = 0; i < piecelist.length; i++) {
+      var j = Math.floor(Math.random() * piecelist.length);
       temp = piecelist[i];
       piecelist[i] = piecelist[j];
       piecelist[j] = temp;
