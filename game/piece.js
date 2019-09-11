@@ -1,5 +1,3 @@
-import piecesstyle from "./piecestyle.js";
-
 var piecestyle = new piecesstyle();
 
 function piecestylecover() {
