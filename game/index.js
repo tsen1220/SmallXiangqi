@@ -69,6 +69,7 @@ class playgame {
       ) {
         $(this).attr("piece", "empty");
         that.piecestyle("empty", this);
+        $(this).css("background", "white");
       }
     });
   }
@@ -86,36 +87,118 @@ class playgame {
               selection.column == $(this).attr("column")
             ) {
               selection = { piece: "", row: "", column: "" };
+
               hasSelection = false;
             } else {
               target.piece = $(this).attr("piece");
               target.row = $(this).attr("row");
               target.column = $(this).attr("column");
               console.log(target);
-              hasSelection = false;
-              that.movepiece(
-                selection.piece,
-                target.piece,
-                selection.row,
-                selection.column,
-                target.row,
-                target.column
-              );
-              that.removepiece(
-                selection.piece,
-                target.piece,
-                selection.row,
-                selection.column,
-                target.row,
-                target.column
-              );
+
+              if (
+                selection.piece == "redboom" ||
+                selection.piece == "blackboom"
+              ) {
+                hasSelection = false;
+                if (target.piece !== "empty") {
+                  that.moveboom(
+                    selection.piece,
+                    target.piece,
+                    selection.row,
+                    selection.column,
+                    target.row,
+                    target.column
+                  );
+                  that.removepiece(
+                    selection.piece,
+                    target.piece,
+                    selection.row,
+                    selection.column,
+                    target.row,
+                    target.column
+                  );
+                } else {
+                  if (
+                    (Math.abs(target.column - selection.column) == 1 &&
+                      Math.abs(target.row - selection.row) == 0) ||
+                    (Math.abs(target.column - selection.column) == 0 &&
+                      Math.abs(target.row - selection.row) == 1)
+                  )
+                    that.movepieceEmpty(
+                      selection.piece,
+                      target.piece,
+                      selection.row,
+                      selection.column,
+                      target.row,
+                      target.column
+                    );
+                  that.removepiece(
+                    selection.piece,
+                    target.piece,
+                    selection.row,
+                    selection.column,
+                    target.row,
+                    target.column
+                  );
+                }
+              } else {
+                if (
+                  (Math.abs(target.column - selection.column) == 1 &&
+                    Math.abs(target.row - selection.row) == 0) ||
+                  (Math.abs(target.column - selection.column) == 0 &&
+                    Math.abs(target.row - selection.row) == 1)
+                ) {
+                  hasSelection = false;
+                  if (target.piece !== "empty") {
+                    that.movepiece(
+                      selection.piece,
+                      target.piece,
+                      selection.row,
+                      selection.column,
+                      target.row,
+                      target.column
+                    );
+                    that.removepiece(
+                      selection.piece,
+                      target.piece,
+                      selection.row,
+                      selection.column,
+                      target.row,
+                      target.column
+                    );
+                  } else {
+                    that.movepieceEmpty(
+                      selection.piece,
+                      target.piece,
+                      selection.row,
+                      selection.column,
+                      target.row,
+                      target.column
+                    );
+                    that.removepiece(
+                      selection.piece,
+                      target.piece,
+                      selection.row,
+                      selection.column,
+                      target.row,
+                      target.column
+                    );
+                  }
+                }
+              }
             }
           } else {
-            selection.piece = $(this).attr("piece");
-            selection.row = $(this).attr("row");
-            selection.column = $(this).attr("column");
-            console.log(selection);
-            hasSelection = true;
+            if ($(this).attr("piece") == "empty") {
+              $(this).css("background", "white");
+              hasSelection = false;
+            } else {
+              selection.piece = $(this).attr("piece");
+              selection.row = $(this).attr("row");
+              selection.column = $(this).attr("column");
+              $(this).css("background", "green");
+              console.log(selection);
+              hasSelection = true;
+            }
           }
         }
       });
@@ -153,6 +236,42 @@ class playgame {
       $(these).html(piecestyle.redrook);
     } else if (selpiece == "empty") {
       $(these).html(" ");
+    }
+  }
+
+  //移動至空格子
+  movepieceEmpty(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) {
+    var that = this;
+
+    $("[piece]").each(function() {
+      if ($(this).hasClass("animated")) {
+        if (
+          $(this).attr("piece") == tarpiece &&
+          $(this).attr("row") == tarrow &&
+          $(this).attr("column") == tarcolumn
+        ) {
+          $(this).attr("piece", selpiece);
+          that.piecestyle(selpiece, this);
+        }
+      }
+    });
+  }
+  //炮跳
+  moveboom(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) {
+    var that = this;
+    if (map[table.get(selpiece)][table.get(tarpiece)] == 1) {
+      $("[piece]").each(function() {
+        if ($(this).hasClass("animated")) {
+          if (
+            $(this).attr("piece") == tarpiece &&
+            $(this).attr("row") == tarrow &&
+            $(this).attr("column") == tarcolumn
+          ) {
+            $(this).attr("piece", selpiece);
+            that.piecestyle(selpiece, this);
+          }
+        }
+      });
     }
   }
 }

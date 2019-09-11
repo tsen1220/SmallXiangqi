@@ -7,12 +7,6 @@
   display: inline-block;
 }
 
-.gamecell:hover {
-  background-color: cadetblue;
-  -webkit-transition: 0.3s linear;
-  transition: 0.3s linear;
-}
-
 .row {
   position: relative;
   width: 900px;
