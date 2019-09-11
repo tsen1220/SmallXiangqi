@@ -293,12 +293,62 @@ class playgame {
   //炮跳
   moveboom(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) {
     var that = this;
-    var arraylist = [];
+
     if (
-      map[Math.abs(table.get(selpiece)) - 1][
-        Math.abs(table.get(tarpiece)) - 1
-      ] == 1
+      Math.abs(selrow - tarrow) == 0 ||
+      Math.abs(selcolumn - tarcolumn) == 0
     ) {
+      var sel = document.getElementById(`blank${selrow}${selcolumn}`);
+      var tar = document.getElementById(`blank${tarrow}${tarcolumn}`);
+      var selerow = parseInt(sel.getAttribute("row"));
+      var selecol = parseInt(sel.getAttribute("column"));
+      var targrow = parseInt(tar.getAttribute("row"));
+      var targcol = parseInt(tar.getAttribute("column"));
+      var count = 0;
+
+      if (Math.abs(selerow - targrow) == 0) {
+        if (selecol < targcol) {
+          for (let i = selecol + 1; i < targcol; i++) {
+            console.log(i);
+            var qq = document.getElementById(`blank${selerow}${i}`);
+
+            if (qq.getAttribute("piece") !== "empty") {
+              count++;
+            }
+          }
+        } else {
+          for (let i = targcol + 1; i < selecol; i++) {
+            console.log(i);
+            var qq = document.getElementById(`blank${selerow}${i}`);
+
+            if (qq.getAttribute("piece") !== "empty") {
+              count++;
+            }
+          }
+        }
+        //對的
+      } else if (Math.abs(selecol - targcol) == 0) {
+        if (selerow < targrow) {
+          for (let i = selerow + 1; i < targrow; i++) {
+            var qq = document.getElementById(`blank${i}${selecol}`);
+
+            if (qq.getAttribute("piece") !== "empty") {
+              count++;
+            }
+          }
+        } else {
+          for (let i = targrow + 1; i < selerow; i++) {
+            var qq = document.getElementById(`blank${i}${selecol}`);
+
+            if (qq.getAttribute("piece") !== "empty") {
+              count++;
+            }
+          }
+        }
+      }
+    }
+
+    if (count == 1) {
       $("[piece]").each(function() {
         if ($(this).hasClass("animated")) {
           if (
@@ -308,9 +358,13 @@ class playgame {
           ) {
             $(this).attr("piece", selpiece);
             that.piecestyle(selpiece, this);
+
+            count = 0;
           }
         }
       });
+    } else {
+      count = 0;
     }
   }
 }
