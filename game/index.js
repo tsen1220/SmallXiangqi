@@ -2,6 +2,7 @@ import piecesstyle from "./piecestyle.js";
 
 var piecestyle = new piecesstyle();
 
+var selectthiserror;
 //儲存選定的旗子
 var selection = { piece: "", row: "", column: "" };
 var target = { piece: "", row: "", column: "" };
@@ -97,7 +98,7 @@ class playgame {
               target.piece = $(this).attr("piece");
               target.row = $(this).attr("row");
               target.column = $(this).attr("column");
-              console.log(target);
+              // console.log(target);
 
               if (
                 selection.piece == "redboom" ||
@@ -131,7 +132,7 @@ class playgame {
                     0
                   ) {
                     selection = { piece: "", row: "", column: "" };
-                    $(this).css("background", "red");
+                    $(selectthiserror).css("background", "red");
                     hasSelection = false;
                   }
                 } else {
@@ -195,7 +196,8 @@ class playgame {
                       0
                     ) {
                       selection = { piece: "", row: "", column: "" };
-                      $(this).css("background", "red");
+                      $(selectthiserror).css("background", "red");
+
                       hasSelection = false;
                     }
                   } else {
@@ -227,9 +229,10 @@ class playgame {
               selection.piece = $(this).attr("piece");
               selection.row = $(this).attr("row");
               selection.column = $(this).attr("column");
+              selectthiserror = this;
 
               $(this).css("background", "green");
-              console.log(selection);
+              // console.log(selection);
               hasSelection = true;
             }
           }
