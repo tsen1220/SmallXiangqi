@@ -10,22 +10,22 @@ var hasSelection = false;
 var table = new Map();
 
 table
-  .set("redpawn", 0)
-  .set("redhorse", 1)
-  .set("redrook", 2)
-  .set("redelephant", 3)
-  .set("redsu", 4)
-  .set("redking", 5)
-  .set("redboom", 6);
+  .set("redpawn", 1)
+  .set("redhorse", 2)
+  .set("redrook", 3)
+  .set("redelephant", 4)
+  .set("redsu", 5)
+  .set("redking", 6)
+  .set("redboom", 7);
 
 table
-  .set("blackpawn", 0)
-  .set("blackhorse", 1)
-  .set("blackrook", 2)
-  .set("blackelephant", 3)
-  .set("blacksu", 4)
-  .set("blackking", 5)
-  .set("blackboom", 6);
+  .set("blackpawn", -1)
+  .set("blackhorse", -2)
+  .set("blackrook", -3)
+  .set("blackelephant", -4)
+  .set("blacksu", -5)
+  .set("blackking", -6)
+  .set("blackboom", -7);
 
 //兵 馬 車 象 仕 帥 炮    1:吃 0:不吃
 var map = [
@@ -42,7 +42,11 @@ class playgame {
   //移動棋子
   movepiece(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) {
     var that = this;
-    if (map[table.get(selpiece)][table.get(tarpiece)] == 1) {
+    if (
+      map[Math.abs(table.get(selpiece)) - 1][
+        Math.abs(table.get(tarpiece)) - 1
+      ] == 1
+    ) {
       $("[piece]").each(function() {
         if ($(this).hasClass("animated")) {
           if (
@@ -87,7 +91,7 @@ class playgame {
               selection.column == $(this).attr("column")
             ) {
               selection = { piece: "", row: "", column: "" };
-
+              $(this).css("background", "white");
               hasSelection = false;
             } else {
               target.piece = $(this).attr("piece");
@@ -99,58 +103,14 @@ class playgame {
                 selection.piece == "redboom" ||
                 selection.piece == "blackboom"
               ) {
+                $(this).css("background", "white");
                 hasSelection = false;
                 if (target.piece !== "empty") {
-                  that.moveboom(
-                    selection.piece,
-                    target.piece,
-                    selection.row,
-                    selection.column,
-                    target.row,
-                    target.column
-                  );
-                  that.removepiece(
-                    selection.piece,
-                    target.piece,
-                    selection.row,
-                    selection.column,
-                    target.row,
-                    target.column
-                  );
-                } else {
                   if (
-                    (Math.abs(target.column - selection.column) == 1 &&
-                      Math.abs(target.row - selection.row) == 0) ||
-                    (Math.abs(target.column - selection.column) == 0 &&
-                      Math.abs(target.row - selection.row) == 1)
-                  )
-                    that.movepieceEmpty(
-                      selection.piece,
-                      target.piece,
-                      selection.row,
-                      selection.column,
-                      target.row,
-                      target.column
-                    );
-                  that.removepiece(
-                    selection.piece,
-                    target.piece,
-                    selection.row,
-                    selection.column,
-                    target.row,
-                    target.column
-                  );
-                }
-              } else {
-                if (
-                  (Math.abs(target.column - selection.column) == 1 &&
-                    Math.abs(target.row - selection.row) == 0) ||
-                  (Math.abs(target.column - selection.column) == 0 &&
-                    Math.abs(target.row - selection.row) == 1)
-                ) {
-                  hasSelection = false;
-                  if (target.piece !== "empty") {
-                    that.movepiece(
+                    table.get(selection.piece) * table.get(target.piece) <
+                    0
+                  ) {
+                    that.moveboom(
                       selection.piece,
                       target.piece,
                       selection.row,
@@ -166,6 +126,78 @@ class playgame {
                       target.row,
                       target.column
                     );
+                  } else if (
+                    table.get(selection.piece) * table.get(target.piece) >
+                    0
+                  ) {
+                    selection = { piece: "", row: "", column: "" };
+                    $(this).css("background", "red");
+                    hasSelection = false;
+                  }
+                } else {
+                  if (
+                    (Math.abs(target.column - selection.column) == 1 &&
+                      Math.abs(target.row - selection.row) == 0) ||
+                    (Math.abs(target.column - selection.column) == 0 &&
+                      Math.abs(target.row - selection.row) == 1)
+                  ) {
+                    that.movepieceEmpty(
+                      selection.piece,
+                      target.piece,
+                      selection.row,
+                      selection.column,
+                      target.row,
+                      target.column
+                    );
+                    that.removepiece(
+                      selection.piece,
+                      target.piece,
+                      selection.row,
+                      selection.column,
+                      target.row,
+                      target.column
+                    );
+                  }
+                }
+              } else {
+                if (
+                  (Math.abs(target.column - selection.column) == 1 &&
+                    Math.abs(target.row - selection.row) == 0) ||
+                  (Math.abs(target.column - selection.column) == 0 &&
+                    Math.abs(target.row - selection.row) == 1)
+                ) {
+                  $(this).css("background", "white");
+                  hasSelection = false;
+
+                  if (target.piece !== "empty") {
+                    if (
+                      table.get(selection.piece) * table.get(target.piece) <
+                      0
+                    ) {
+                      that.movepiece(
+                        selection.piece,
+                        target.piece,
+                        selection.row,
+                        selection.column,
+                        target.row,
+                        target.column
+                      );
+                      that.removepiece(
+                        selection.piece,
+                        target.piece,
+                        selection.row,
+                        selection.column,
+                        target.row,
+                        target.column
+                      );
+                    } else if (
+                      table.get(selection.piece) * table.get(target.piece) >
+                      0
+                    ) {
+                      selection = { piece: "", row: "", column: "" };
+                      $(this).css("background", "red");
+                      hasSelection = false;
+                    }
                   } else {
                     that.movepieceEmpty(
                       selection.piece,
@@ -195,6 +227,7 @@ class playgame {
               selection.piece = $(this).attr("piece");
               selection.row = $(this).attr("row");
               selection.column = $(this).attr("column");
+
               $(this).css("background", "green");
               console.log(selection);
               hasSelection = true;
@@ -259,7 +292,12 @@ class playgame {
   //炮跳
   moveboom(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) {
     var that = this;
-    if (map[table.get(selpiece)][table.get(tarpiece)] == 1) {
+    var arraylist = [];
+    if (
+      map[Math.abs(table.get(selpiece)) - 1][
+        Math.abs(table.get(tarpiece)) - 1
+      ] == 1
+    ) {
       $("[piece]").each(function() {
         if ($(this).hasClass("animated")) {
           if (
