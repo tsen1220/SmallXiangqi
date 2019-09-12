@@ -174,35 +174,45 @@ class playgame {
                       0
                     ) {
                       if (
-                        Math.abs(table.get(selection.piece)) >=
-                          Math.abs(table.get(target.piece)) ||
-                        target.piece == "redboom" ||
-                        target.piece == "blackboom" ||
-                        ((selection.piece == "redpawn" ||
-                          selection.piece == "blackpawn") &&
-                          (target.piece == "blackking" ||
-                            target.piece == "redking"))
+                        (selection.piece == "blackking" ||
+                          selection.piece == "redking") &&
+                        (target.piece == "blackpawn" ||
+                          target.piece == "redpawn")
                       ) {
-                        that.movepiece(
-                          selection.piece,
-                          target.piece,
-                          selection.row,
-                          selection.column,
-                          target.row,
-                          target.column
-                        );
-                        that.removepiece(
-                          selection.piece,
-                          target.piece,
-                          selection.row,
-                          selection.column,
-                          target.row,
-                          target.column
-                        );
-                      } else {
-                        selection = { piece: "", row: "", column: "" };
                         $(selectthiserror).css("background", "red");
                         hasSelection = false;
+                      } else {
+                        if (
+                          Math.abs(table.get(selection.piece)) >=
+                            Math.abs(table.get(target.piece)) ||
+                          target.piece == "redboom" ||
+                          target.piece == "blackboom" ||
+                          ((selection.piece == "redpawn" ||
+                            selection.piece == "blackpawn") &&
+                            (target.piece == "blackking" ||
+                              target.piece == "redking"))
+                        ) {
+                          that.movepiece(
+                            selection.piece,
+                            target.piece,
+                            selection.row,
+                            selection.column,
+                            target.row,
+                            target.column
+                          );
+                          that.removepiece(
+                            selection.piece,
+                            target.piece,
+                            selection.row,
+                            selection.column,
+                            target.row,
+                            target.column
+                          );
+                        } else {
+                          selection = { piece: "", row: "", column: "" };
+                          $(selectthiserror).css("background", "red");
+                          hasSelection = false;
+                        }
                       }
                     } else if (
                       table.get(selection.piece) * table.get(target.piece) >
@@ -323,17 +333,17 @@ class playgame {
       if (Math.abs(selerow - targrow) == 0) {
         if (selecol < targcol) {
           for (let i = selecol + 1; i < targcol; i++) {
-            var qq = document.getElementById(`blank${selerow}${i}`);
+            var divid = document.getElementById(`blank${selerow}${i}`);
 
-            if (qq.getAttribute("piece") !== "empty") {
+            if (divid.getAttribute("piece") !== "empty") {
               count++;
             }
           }
         } else {
           for (let i = targcol + 1; i < selecol; i++) {
-            var qq = document.getElementById(`blank${selerow}${i}`);
+            var divid = document.getElementById(`blank${selerow}${i}`);
 
-            if (qq.getAttribute("piece") !== "empty") {
+            if (divid.getAttribute("piece") !== "empty") {
               count++;
             }
           }
@@ -342,17 +352,17 @@ class playgame {
       } else if (Math.abs(selecol - targcol) == 0) {
         if (selerow < targrow) {
           for (let i = selerow + 1; i < targrow; i++) {
-            var qq = document.getElementById(`blank${i}${selecol}`);
+            var divid = document.getElementById(`blank${i}${selecol}`);
 
-            if (qq.getAttribute("piece") !== "empty") {
+            if (divid.getAttribute("piece") !== "empty") {
               count++;
             }
           }
         } else {
           for (let i = targrow + 1; i < selerow; i++) {
-            var qq = document.getElementById(`blank${i}${selecol}`);
+            var divid = document.getElementById(`blank${i}${selecol}`);
 
-            if (qq.getAttribute("piece") !== "empty") {
+            if (divid.getAttribute("piece") !== "empty") {
               count++;
             }
           }
