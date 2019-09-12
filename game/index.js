@@ -48,6 +48,7 @@ class playgame {
     ) {
       $("[piece]").each(function() {
         if ($(this).hasClass("animated")) {
+          //此處this 為 target
           if (
             $(this).attr("piece") == tarpiece &&
             $(this).attr("row") == tarrow &&
@@ -65,6 +66,7 @@ class playgame {
     var that = this;
 
     $("[piece]").each(function() {
+      //此處this 為 selection
       if (
         $(this).attr("piece") == selpiece &&
         $(this).attr("row") == selrow &&
@@ -177,7 +179,7 @@ class playgame {
                         target.piece == "redboom" ||
                         target.piece == "blackboom" ||
                         ((selection.piece == "redpawn" ||
-                          target.piece == "blackpawn") &&
+                          selection.piece == "blackpawn") &&
                           (target.piece == "blackking" ||
                             target.piece == "redking"))
                       ) {
