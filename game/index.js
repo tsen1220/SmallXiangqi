@@ -117,19 +117,10 @@ class playgame {
                       target.row,
                       target.column
                     );
-                    that.removepiece(
-                      selection.piece,
-                      target.piece,
-                      selection.row,
-                      selection.column,
-                      target.row,
-                      target.column
-                    );
                   } else if (
                     table.get(selection.piece) * table.get(target.piece) >
                     0
                   ) {
-                    selection = { piece: "", row: "", column: "" };
                     $(selectthiserror).css("background", "red");
                     hasSelection = false;
                   }
@@ -156,6 +147,13 @@ class playgame {
                       target.row,
                       target.column
                     );
+                  } else {
+                    $(`#blank${selection.row}${selection.column}`).css(
+                      "background",
+                      "white"
+                    );
+
+                    hasSelection = false;
                   }
                 }
               } else {
@@ -173,29 +171,43 @@ class playgame {
                       table.get(selection.piece) * table.get(target.piece) <
                       0
                     ) {
-                      that.movepiece(
-                        selection.piece,
-                        target.piece,
-                        selection.row,
-                        selection.column,
-                        target.row,
-                        target.column
-                      );
-                      that.removepiece(
-                        selection.piece,
-                        target.piece,
-                        selection.row,
-                        selection.column,
-                        target.row,
-                        target.column
-                      );
+                      if (
+                        Math.abs(table.get(selection.piece)) >=
+                          Math.abs(table.get(target.piece)) ||
+                        target.piece == "redboom" ||
+                        target.piece == "blackboom" ||
+                        ((selection.piece == "redpawn" ||
+                          target.piece == "blackpawn") &&
+                          (target.piece == "blackking" ||
+                            target.piece == "redking"))
+                      ) {
+                        that.movepiece(
+                          selection.piece,
+                          target.piece,
+                          selection.row,
+                          selection.column,
+                          target.row,
+                          target.column
+                        );
+                        that.removepiece(
+                          selection.piece,
+                          target.piece,
+                          selection.row,
+                          selection.column,
+                          target.row,
+                          target.column
+                        );
+                      } else {
+                        selection = { piece: "", row: "", column: "" };
+                        $(selectthiserror).css("background", "red");
+                        hasSelection = false;
+                      }
                     } else if (
                       table.get(selection.piece) * table.get(target.piece) >
                       0
                     ) {
                       selection = { piece: "", row: "", column: "" };
                       $(selectthiserror).css("background", "red");
-
                       hasSelection = false;
                     }
                   } else {
@@ -309,7 +321,6 @@ class playgame {
       if (Math.abs(selerow - targrow) == 0) {
         if (selecol < targcol) {
           for (let i = selecol + 1; i < targcol; i++) {
-            console.log(i);
             var qq = document.getElementById(`blank${selerow}${i}`);
 
             if (qq.getAttribute("piece") !== "empty") {
@@ -318,7 +329,6 @@ class playgame {
           }
         } else {
           for (let i = targcol + 1; i < selecol; i++) {
-            console.log(i);
             var qq = document.getElementById(`blank${selerow}${i}`);
 
             if (qq.getAttribute("piece") !== "empty") {
@@ -359,11 +369,21 @@ class playgame {
             $(this).attr("piece", selpiece);
             that.piecestyle(selpiece, this);
 
+            that.removepiece(
+              selection.piece,
+              target.piece,
+              selection.row,
+              selection.column,
+              target.row,
+              target.column
+            );
+
             count = 0;
           }
         }
       });
     } else {
+      sel.style.background = "white";
       count = 0;
     }
   }
