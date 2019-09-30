@@ -2,15 +2,25 @@
   "name": "smallchinesechess",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "jquery.min.js",
   "dependencies": {
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
-    "jquery": "^3.4.1"
+    "nodemon": "^1.19.3"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsen1220/SmallXiangqi.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsen1220/SmallXiangqi/issues"
+  },
+  "homepage": "https://github.com/tsen1220/SmallXiangqi#readme"
 }
