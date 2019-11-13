@@ -37,3 +37,5 @@ npm run dev
 ```
 
 Play with others. Enjoy the game!
+
+<img src="https://raw.githubusercontent.com/tsen1220/SmallXiangqi/master/IMG/intro.jpg" alt="">
