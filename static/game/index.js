@@ -401,4 +401,17 @@ class playgame {
   }
 }
 var game = new playgame();
-game.Choosepiece();
+if (turn) {
+  game.Choosepiece();
+}
+//flip
+
+$(".gamecell").each(function() {
+  $(this).bind("click", function() {
+    $(this).addClass("flipInX animated");
+
+    $(this)
+      .children(".cover")
+      .css("opacity", "0");
+  });
+});
