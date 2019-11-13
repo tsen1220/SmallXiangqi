@@ -401,9 +401,9 @@ class playgame {
   }
 }
 var game = new playgame();
-if (turn) {
-  game.Choosepiece();
-}
+
+game.Choosepiece();
+
 //flip
 
 $(".gamecell").each(function() {

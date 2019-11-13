@@ -1,13 +1,13 @@
 function victory() {
   var countred = 0;
   var countblack = 0;
-  var a = [];
+  var arr = [];
   $("[piece]").each(function() {
-    a.push($(this).attr("piece"));
+    arr.push($(this).attr("piece"));
   });
 
   for (let i = 0; i < a.length; i++) {
-    if (a[i].includes("red") || a[i].includes("empty")) {
+    if (arr[i].includes("red") || arr[i].includes("empty")) {
       countred++;
     }
   }
@@ -20,11 +20,10 @@ function victory() {
   }
 
   for (let i = 0; i < a.length; i++) {
-    if (a[i].includes("black") || a[i].includes("empty")) {
+    if (arr[i].includes("black") || arr[i].includes("empty")) {
       countblack++;
     }
   }
-  console.log(countblack);
 
   if (countblack == 32) {
     $("#victory").html(`結果:黑方勝利`);
