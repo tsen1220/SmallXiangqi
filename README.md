@@ -11,13 +11,13 @@ If you like this, please give me a star. Thank you!!
 安裝伺服器相關 modules。
 
 ```
-npm install
+$ npm install
 ```
 
 啟動伺服器
 
 ```
-npm run dev
+$ npm run dev
 ```
 
 可以與玩家一對一，享受中國暗棋的樂趣。
@@ -31,9 +31,9 @@ Run Server by node.
 We need to install the modules and run server.
 
 ```
-npm install
+$ npm install
 
-npm run dev
+$ npm run dev
 ```
 
 Play with others. Enjoy the game!
