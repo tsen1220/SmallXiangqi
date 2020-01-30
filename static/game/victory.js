@@ -6,12 +6,11 @@ function victory() {
     arr.push($(this).attr("piece"));
   });
 
-  for (let i = 0; i < a.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i].includes("red") || arr[i].includes("empty")) {
       countred++;
     }
   }
-  console.log(countred);
 
   if (countred == 32) {
     $("#victory").html(`結果:紅方勝利`);
@@ -19,7 +18,7 @@ function victory() {
     $("#victory").html(`結果:未分出勝負`);
   }
 
-  for (let i = 0; i < a.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i].includes("black") || arr[i].includes("empty")) {
       countblack++;
     }
