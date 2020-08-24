@@ -39,21 +39,17 @@ var map = [
 
 class playgame {
   //移動棋子
-  movepiece(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) {
+  movepiece(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) 
+  {
     var that = this;
-    if (
-      map[Math.abs(table.get(selpiece)) - 1][
-        Math.abs(table.get(tarpiece)) - 1
-      ] == 1
-    ) {
+    if (map[Math.abs(table.get(selpiece)) - 1][Math.abs(table.get(tarpiece)) - 1] == 1) 
+    {
       $("[piece]").each(function() {
-        if ($(this).hasClass("animated")) {
+        if ($(this).hasClass("animated")) 
+        {
           //此處this 為 target
-          if (
-            $(this).attr("piece") == tarpiece &&
-            $(this).attr("row") == tarrow &&
-            $(this).attr("column") == tarcolumn
-          ) {
+          if ($(this).attr("piece") == tarpiece && $(this).attr("row") == tarrow && $(this).attr("column") == tarcolumn) 
+          {
             $(this).attr("piece", selpiece);
             that.piecestyle(selpiece, this);
           }
@@ -61,17 +57,16 @@ class playgame {
       });
     }
   }
+
   //移除原位棋子
-  removepiece(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) {
+  removepiece(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn)
+  {
     var that = this;
 
     $("[piece]").each(function() {
       //此處this 為 selection
-      if (
-        $(this).attr("piece") == selpiece &&
-        $(this).attr("row") == selrow &&
-        $(this).attr("column") == selcolumn
-      ) {
+      if ($(this).attr("piece") == selpiece && $(this).attr("row") == selrow && $(this).attr("column") == selcolumn) 
+      {
         $(this).attr("piece", "empty");
         that.piecestyle("empty", this);
         $(this).css("background", "white");
@@ -80,37 +75,37 @@ class playgame {
   }
 
   // 選擇指定旗子
-  Choosepiece() {
+  Choosepiece() 
+  {
     var that = this;
 
     $("[piece]").each(function() {
       $(this).bind("click", function() {
-        if ($(this).hasClass("animated")) {
-          if (hasSelection) {
-            if (
-              selection.row == $(this).attr("row") &&
-              selection.column == $(this).attr("column")
-            ) {
+        if ($(this).hasClass("animated")) 
+        {
+          if (hasSelection) 
+          {
+            if (selection.row == $(this).attr("row") && selection.column == $(this).attr("column")) 
+            {
               selection = { piece: "", row: "", column: "" };
               $(this).css("background", "white");
               hasSelection = false;
-            } else {
+            } 
+            else 
+            {
               target.piece = $(this).attr("piece");
               target.row = $(this).attr("row");
               target.column = $(this).attr("column");
               // console.log(target);
 
-              if (
-                selection.piece == "redboom" ||
-                selection.piece == "blackboom"
-              ) {
+              if (selection.piece == "redboom" || selection.piece == "blackboom") 
+              {
                 $(this).css("background", "white");
                 hasSelection = false;
-                if (target.piece !== "empty") {
-                  if (
-                    table.get(selection.piece) * table.get(target.piece) <
-                    0
-                  ) {
+                if (target.piece !== "empty") 
+                {
+                  if (table.get(selection.piece) * table.get(target.piece) < 0) 
+                  {
                     that.moveboom(
                       selection.piece,
                       target.piece,
@@ -119,20 +114,17 @@ class playgame {
                       target.row,
                       target.column
                     );
-                  } else if (
-                    table.get(selection.piece) * table.get(target.piece) >
-                    0
-                  ) {
+                  } 
+                  else if (table.get(selection.piece) * table.get(target.piece) > 0) 
+                  {
                     $(selectthiserror).css("background", "red");
                     hasSelection = false;
                   }
-                } else {
-                  if (
-                    (Math.abs(target.column - selection.column) == 1 &&
-                      Math.abs(target.row - selection.row) == 0) ||
-                    (Math.abs(target.column - selection.column) == 0 &&
-                      Math.abs(target.row - selection.row) == 1)
-                  ) {
+                } 
+                else 
+                {
+                  if ((Math.abs(target.column - selection.column) == 1 && Math.abs(target.row - selection.row) == 0) || (Math.abs(target.column - selection.column) == 0 && Math.abs(target.row - selection.row) == 1)) 
+                  {
                     that.movepieceEmpty(
                       selection.piece,
                       target.piece,
@@ -149,7 +141,9 @@ class playgame {
                       target.row,
                       target.column
                     );
-                  } else {
+                  }
+                  else
+                  {
                     $(`#blank${selection.row}${selection.column}`).css(
                       "background",
                       "white"
@@ -158,40 +152,27 @@ class playgame {
                     hasSelection = false;
                   }
                 }
-              } else {
-                if (
-                  (Math.abs(target.column - selection.column) == 1 &&
-                    Math.abs(target.row - selection.row) == 0) ||
-                  (Math.abs(target.column - selection.column) == 0 &&
-                    Math.abs(target.row - selection.row) == 1)
-                ) {
+              } 
+              else 
+              {
+                if ((Math.abs(target.column - selection.column) == 1 && Math.abs(target.row - selection.row) == 0) || (Math.abs(target.column - selection.column) == 0 && Math.abs(target.row - selection.row) == 1)) 
+                {
                   $(this).css("background", "white");
                   hasSelection = false;
 
-                  if (target.piece !== "empty") {
-                    if (
-                      table.get(selection.piece) * table.get(target.piece) <
-                      0
-                    ) {
-                      if (
-                        (selection.piece == "blackking" ||
-                          selection.piece == "redking") &&
-                        (target.piece == "blackpawn" ||
-                          target.piece == "redpawn")
-                      ) {
+                  if (target.piece !== "empty") 
+                  {
+                    if (table.get(selection.piece) * table.get(target.piece) < 0) 
+                    {
+                      if ((selection.piece == "blackking" || selection.piece == "redking") && (target.piece == "blackpawn" || target.piece == "redpawn")) 
+                      {
                         $(selectthiserror).css("background", "red");
                         hasSelection = false;
-                      } else {
-                        if (
-                          Math.abs(table.get(selection.piece)) >=
-                            Math.abs(table.get(target.piece)) ||
-                          target.piece == "redboom" ||
-                          target.piece == "blackboom" ||
-                          ((selection.piece == "redpawn" ||
-                            selection.piece == "blackpawn") &&
-                            (target.piece == "blackking" ||
-                              target.piece == "redking"))
-                        ) {
+                      } 
+                      else 
+                      {
+                        if (Math.abs(table.get(selection.piece)) >= Math.abs(table.get(target.piece)) || target.piece == "redboom" || target.piece == "blackboom" || ((selection.piece == "redpawn" || selection.piece == "blackpawn") && (target.piece == "blackking" || target.piece == "redking"))) 
+                        {
                           that.movepiece(
                             selection.piece,
                             target.piece,
@@ -208,21 +189,24 @@ class playgame {
                             target.row,
                             target.column
                           );
-                        } else {
+                        } 
+                        else 
+                        {
                           selection = { piece: "", row: "", column: "" };
                           $(selectthiserror).css("background", "red");
                           hasSelection = false;
                         }
                       }
-                    } else if (
-                      table.get(selection.piece) * table.get(target.piece) >
-                      0
-                    ) {
+                    } 
+                    else if (table.get(selection.piece) * table.get(target.piece) > 0) 
+                    {
                       selection = { piece: "", row: "", column: "" };
                       $(selectthiserror).css("background", "red");
                       hasSelection = false;
                     }
-                  } else {
+                  } 
+                  else 
+                  {
                     that.movepieceEmpty(
                       selection.piece,
                       target.piece,
@@ -243,11 +227,16 @@ class playgame {
                 }
               }
             }
-          } else {
-            if ($(this).attr("piece") == "empty") {
+          } 
+          else 
+          {
+            if ($(this).attr("piece") == "empty") 
+            {
               $(this).css("background", "white");
               hasSelection = false;
-            } else {
+            } 
+            else 
+            {
               selection.piece = $(this).attr("piece");
               selection.row = $(this).attr("row");
               selection.column = $(this).attr("column");
@@ -263,51 +252,80 @@ class playgame {
     });
   }
   //渲染attr
-  piecestyle(selpiece, these) {
-    if (selpiece == "blackking") {
+  piecestyle(selpiece, these) 
+  {
+    if (selpiece == "blackking") 
+    {
       $(these).html(piecestyle.blackking);
-    } else if (selpiece == "redking") {
+    } 
+    else if (selpiece == "redking") 
+    {
       $(these).html(piecestyle.redking);
-    } else if (selpiece == "blackboom") {
+    }
+    else if (selpiece == "blackboom") 
+    {
       $(these).html(piecestyle.blackboom);
-    } else if (selpiece == "blackelephant") {
+    }
+    else if (selpiece == "blackelephant") 
+    {
       $(these).html(piecestyle.blackelephant);
-    } else if (selpiece == "blackhorse") {
+    } 
+    else if (selpiece == "blackhorse") 
+    {
       $(these).html(piecestyle.blackhorse);
-    } else if (selpiece == "blackpawn") {
+    } 
+    else if (selpiece == "blackpawn") 
+    {
       $(these).html(piecestyle.blackpawn);
-    } else if (selpiece == "blackrook") {
+    } 
+    else if (selpiece == "blackrook") 
+    {
       $(these).html(piecestyle.blackrook);
-    } else if (selpiece == "blacksu") {
+    } 
+    else if (selpiece == "blacksu") 
+    {
       $(these).html(piecestyle.blacksu);
-    } else if (selpiece == "redboom") {
+    } 
+    else if (selpiece == "redboom") 
+    {
       $(these).html(piecestyle.redboom);
-    } else if (selpiece == "redelephant") {
+    } 
+    else if (selpiece == "redelephant") 
+    {
       $(these).html(piecestyle.redelephant);
-    } else if (selpiece == "redhorse") {
+    } 
+    else if (selpiece == "redhorse") 
+    {
       $(these).html(piecestyle.redhorse);
-    } else if (selpiece == "redpawn") {
+    } 
+    else if (selpiece == "redpawn") 
+    {
       $(these).html(piecestyle.redpawn);
-    } else if (selpiece == "redsu") {
+    } 
+    else if (selpiece == "redsu") 
+    {
       $(these).html(piecestyle.redsu);
-    } else if (selpiece == "redrook") {
+    } 
+    else if (selpiece == "redrook") 
+    {
       $(these).html(piecestyle.redrook);
-    } else if (selpiece == "empty") {
+    } 
+    else if (selpiece == "empty") 
+    {
       $(these).html(" ");
     }
   }
 
   //移動至空格子
-  movepieceEmpty(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) {
+  movepieceEmpty(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) 
+  {
     var that = this;
 
     $("[piece]").each(function() {
-      if ($(this).hasClass("animated")) {
-        if (
-          $(this).attr("piece") == tarpiece &&
-          $(this).attr("row") == tarrow &&
-          $(this).attr("column") == tarcolumn
-        ) {
+      if ($(this).hasClass("animated")) 
+      {
+        if ($(this).attr("piece") == tarpiece && $(this).attr("row") == tarrow && $(this).attr("column") == tarcolumn) 
+        {
           $(this).attr("piece", selpiece);
           that.piecestyle(selpiece, this);
         }
@@ -315,13 +333,12 @@ class playgame {
     });
   }
   //炮跳
-  moveboom(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) {
+  moveboom(selpiece, tarpiece, selrow, selcolumn, tarrow, tarcolumn) 
+  {
     var that = this;
 
-    if (
-      Math.abs(selrow - tarrow) == 0 ||
-      Math.abs(selcolumn - tarcolumn) == 0
-    ) {
+    if (Math.abs(selrow - tarrow) == 0 || Math.abs(selcolumn - tarcolumn) == 0) 
+    {
       var sel = document.getElementById(`blank${selrow}${selcolumn}`);
       var tar = document.getElementById(`blank${tarrow}${tarcolumn}`);
       var selerow = parseInt(sel.getAttribute("row"));
@@ -330,39 +347,56 @@ class playgame {
       var targcol = parseInt(tar.getAttribute("column"));
       var count = 0;
 
-      if (Math.abs(selerow - targrow) == 0) {
-        if (selecol < targcol) {
-          for (let i = selecol + 1; i < targcol; i++) {
+      if (Math.abs(selerow - targrow) == 0) 
+      {
+        if (selecol < targcol) 
+        {
+          for (let i = selecol + 1; i < targcol; i++) 
+          {
             var divid = document.getElementById(`blank${selerow}${i}`);
 
-            if (divid.getAttribute("piece") !== "empty") {
+            if (divid.getAttribute("piece") !== "empty") 
+            {
               count++;
             }
           }
-        } else {
-          for (let i = targcol + 1; i < selecol; i++) {
+        } 
+        else 
+        {
+          for (let i = targcol + 1; i < selecol; i++) 
+          {
             var divid = document.getElementById(`blank${selerow}${i}`);
 
-            if (divid.getAttribute("piece") !== "empty") {
+            if (divid.getAttribute("piece") !== "empty") 
+            {
               count++;
             }
           }
         }
         //對的
-      } else if (Math.abs(selecol - targcol) == 0) {
-        if (selerow < targrow) {
-          for (let i = selerow + 1; i < targrow; i++) {
+      } 
+      else if (Math.abs(selecol - targcol) == 0) 
+      {
+        if (selerow < targrow) 
+        {
+          for (let i = selerow + 1; i < targrow; i++) 
+          {
             var divid = document.getElementById(`blank${i}${selecol}`);
 
-            if (divid.getAttribute("piece") !== "empty") {
+            if (divid.getAttribute("piece") !== "empty") 
+            {
               count++;
             }
           }
-        } else {
-          for (let i = targrow + 1; i < selerow; i++) {
+        } 
+        else 
+        {
+          for (let i = targrow + 1; i < selerow; i++) 
+          {
             var divid = document.getElementById(`blank${i}${selecol}`);
 
-            if (divid.getAttribute("piece") !== "empty") {
+            if (divid.getAttribute("piece") !== "empty") 
+            {
               count++;
             }
           }
@@ -370,14 +404,13 @@ class playgame {
       }
     }
 
-    if (count == 1) {
+    if (count == 1) 
+    {
       $("[piece]").each(function() {
-        if ($(this).hasClass("animated")) {
-          if (
-            $(this).attr("piece") == tarpiece &&
-            $(this).attr("row") == tarrow &&
-            $(this).attr("column") == tarcolumn
-          ) {
+        if ($(this).hasClass("animated")) 
+        {
+          if ($(this).attr("piece") == tarpiece && $(this).attr("row") == tarrow && $(this).attr("column") == tarcolumn) 
+          {
             $(this).attr("piece", selpiece);
             that.piecestyle(selpiece, this);
 
@@ -394,7 +427,9 @@ class playgame {
           }
         }
       });
-    } else {
+    } 
+    else 
+    {
       sel.style.background = "white";
       count = 0;
     }

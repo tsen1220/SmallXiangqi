@@ -2,7 +2,6 @@ class piecesstyle {
   constructor() {}
 
   blackboom = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -41,8 +40,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   blackelephant = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -78,8 +77,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   blackhorse = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -116,8 +115,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   blackking = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -157,8 +156,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   blackpawn = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -189,8 +188,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   blackrook = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -223,8 +222,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   blacksu = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#000" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -243,8 +242,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   redboom = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -281,8 +280,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   redelephant = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -315,8 +314,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   redhorse = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -359,8 +358,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   redking = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -394,8 +393,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   redpawn = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -423,8 +422,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   redrook = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">
@@ -461,8 +460,8 @@ class piecesstyle {
   </svg>
   </svg>
   `;
+
   redsu = `<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
   <circle id="cir_1" r="50" cx="50" cy="50" fill="#eb5"/>
   <circle id="cir_2" r="45" cx="50" cy="50" stroke-width="2" stroke="#f00" fill="#eb5"/>
   <svg x="15" y="15" viewBox="0 0 250 250" width="70px" height="70px">

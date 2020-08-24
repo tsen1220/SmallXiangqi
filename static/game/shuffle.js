@@ -38,8 +38,10 @@ const oneDigit = 8;
 var temp = [];
 
 function shuffle() {
-  for (let k = 0; k < 100; k++) {
-    for (let i = 0; i < piecelist.length; i++) {
+  for (let k = 0; k < 100; k++) 
+  {
+    for (let i = 0; i < piecelist.length; i++) 
+    {
       var j = Math.floor(Math.random() * piecelist.length);
       temp = piecelist[i];
       piecelist[i] = piecelist[j];
@@ -47,8 +49,10 @@ function shuffle() {
     }
   }
 
-  for (let i = 0; i < tenDigit; i++) {
-    for (let j = 0; j < oneDigit; j++) {
+  for (let i = 0; i < tenDigit; i++) 
+  {
+    for (let j = 0; j < oneDigit; j++) 
+    {
       var gamecell = document.getElementById(`blank${i}${j}`);
       gamecell.setAttribute("piece", piecelist[i * 8 + j]);
     }
